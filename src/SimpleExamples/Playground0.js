@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
 export default function Playground0() {
-  const [text, setText] = useState("");
-  const [checked, setChecked] = useState(false);
+  // const [text, setText] = useState("");
+  const [state, setState] = useState({
+    text: "",
+    checked: false,
+  });
+  // const [checked, setChecked] = useState(false);
   // const handleCheckboxToggle = e => {
   //   setChecked({e.target.checked: !checked })
   // }
@@ -13,25 +17,32 @@ export default function Playground0() {
   // };
 
   // Providing a previous method
-  const handleCheckboxToggle = (e) => {
-    setChecked((prevChecked) => !prevChecked);
-  };
+  // const handleCheckboxToggle = (e) => {
+  //   setChecked((prevChecked) => !prevChecked);
+  // };
+
+  const mergeState = (partialState) =>
+    setState((prevState) => ({
+      ...prevState,
+      ...partialState,
+    }));
 
   return (
     <section>
       <input
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={state.text}
+        onChange={(e) => mergeState({ text: e.target.value })}
       />
       <input
         type="checkbox"
-        checked={checked}
-        onChange={handleCheckboxToggle}
+        checked={state.checked}
+        // onChange={handleCheckboxToggle}
+        onChange={(e) => mergeState({ checked: !state.checked })}
       />
       <ul>
-        <li>{text}</li>
-        <li>{checked.toString()}</li>
+        <li>{state.text}</li>
+        <li>{state.checked.toString()}</li>
       </ul>
     </section>
   );
