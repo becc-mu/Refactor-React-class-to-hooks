@@ -1,5 +1,5 @@
 {
-  "name": "02-add-state-to-a-react-function-component-with-the-useState-hook",
+  "name": "Refactor-React-class-to-hooks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,9 +8,9 @@
     "emotion": "^10.0.7",
     "lodash.uniqueid": "^4.0.1",
     "react": "~16.8.2",
-    "react-dom": "~16.8.2",
+    "react-dom": "~16.13.1",
     "react-emotion": "^10.0.0",
-    "react-scripts": "2.1.5"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
