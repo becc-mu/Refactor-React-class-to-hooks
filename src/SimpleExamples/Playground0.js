@@ -6,8 +6,15 @@ export default function Playground0() {
   // const handleCheckboxToggle = e => {
   //   setChecked({e.target.checked: !checked })
   // }
+
+  // Negating checked method
+  // const handleCheckboxToggle = (e) => {
+  //   setChecked(!checked);
+  // };
+
+  // Providing a previous method
   const handleCheckboxToggle = (e) => {
-    setChecked(!checked);
+    setChecked((prevChecked) => !prevChecked);
   };
 
   return (
